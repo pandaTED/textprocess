@@ -1,0 +1,33 @@
+spring:
+  profiles:
+    active: dev
+  session:
+    store-type: redis
+server:
+  port: 8080
+  context-path: /
+  use-forward-headers: true
+  tomcat:
+    remote-ip-header: x-forwarded-for
+    protocol-header: x-forwarded-proto
+    port-header: X-Forwarded-Port
+#context:
+#  listener:
+#    classes: com.zhiku.util.RunOnRun
+
+security:
+  user:
+    name: panda
+    password: 123456
+    ## Freemarker ≈‰÷√
+    ## Œƒº˛≈‰÷√¬∑æ∂
+  freemarker:
+    template-loader-path:classpath: /templates/
+    cache: false
+    charset: UTF-8
+    check-template-location: true
+    content-type: text/html
+    expose-request-attributes: true
+    expose-session-attributes: true
+    request-context-attribute: request
+    suffix: .ftl
